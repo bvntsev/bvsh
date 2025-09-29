@@ -2,7 +2,7 @@
 
 #define IO_H
 
-char *get_ui();
+struct ui_t *get_ui();
 
 void ret_uo(char *);
 

@@ -8,7 +8,8 @@
 
 int main() {
     
-    get_ui();
+    struct ui_t *ui = get_ui();
+    
 
 
 
