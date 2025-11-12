@@ -20,6 +20,9 @@ $(BIN_DIR):
 run:
 	$(BIN)
 
+run_gdb:
+	gdb $(BIN)
+
 clean:
 	rm -f $(BIN_DIR)/$(BIN_NAME)
 	rm -f temp/*
