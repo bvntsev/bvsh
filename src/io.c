@@ -23,8 +23,8 @@ static void printf_ui_list(const struct ui_t *ui) {
     }
 }
 
-static void rm_void_el(struct ui_t *ui) { // need to write this with 1 loop
-    printf("========RM_VOID_EL=========\n");
+static void rm_void_el(struct ui_t *ui) { // FIX: need to write this with 1 loop
+    // printf("%s\n", "========RM_VOID_EL=========");
 
     int32_t cnt_nonvoid_el = 0;
     for (uint32_t iter = 0; iter < ui->len_list; ++iter) {
@@ -32,12 +32,12 @@ static void rm_void_el(struct ui_t *ui) { // need to write this with 1 loop
             ++cnt_nonvoid_el;
         }
     }
-    printf("%d\n", cnt_nonvoid_el);
+    // printf("%d\n", cnt_nonvoid_el);
 
     char **n_list_ui = (char **)malloc(sizeof(char *) * cnt_nonvoid_el);
     uint32_t iter_list = 0;
 
-    int32_t buffer = cnt_nonvoid_el; // !JELKQJWELKJQWLEJQLKEWJ
+    int32_t buffer = cnt_nonvoid_el;//FIX: Don't use the buffer for count
     
     for (uint32_t iter = 0; iter < ui->len_list ; iter++) {
         if (strncmp(ui->list_ui[iter], "", 1) != 0) {
@@ -75,12 +75,12 @@ struct ui_t *get_ui() {
 
     struct ui_t *ui_processed = split_ui(ui, &r_bytes, ' ');
 
-    printf("split_ui is good\n");
+    // printf("split_ui is good\n");
 
     rm_void_el(ui_processed);
 
-    printf_ui_list(ui_processed);
-    printf("rm_void_el is good\n");
+    // printf_ui_list(ui_processed);
+    // printf("rm_void_el is good\n");
 
     return ui_processed;
 }
@@ -94,7 +94,7 @@ void ret_uo(char *ret_str) {
 
 struct ui_t *split_ui(char *ui, ssize_t *len_ui, char symbol) {
 
-    printf("========SPLIT_UI=========\n");
+    // printf("========SPLIT_UI=========\n");
 
     ssize_t symb_amount = 0;
     ssize_t max_iw_len = 0, buf_iw_len = 0;
