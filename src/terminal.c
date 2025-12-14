@@ -42,13 +42,13 @@ int input_processing(char **input, const u32 *len) {
     u32 sys_command_len = sizeof(sys_command)/sizeof(char *);
     for (u32 iter = 0; iter < sys_command_len; ++iter) {
         if (strcmp(sys_command[iter], input[0]) == 0) {
-            printf("matched\n");
+            printf("sh func found\n");
             return sys_functions[iter](input);
         }
     }
-
     return pid_launch(input);
 } 
+
 
 int pid_launch(char **arg) {
 
@@ -106,7 +106,6 @@ int user_cd(char **arg){ //TODO: man 2 chdir
 
 }
 
-int user_exit(char ** str){
-    // TODO: kill pid
+int user_exit(char **str){
     exit(0);
 }
