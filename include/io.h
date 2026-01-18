@@ -7,6 +7,8 @@ struct ui_t *get_ui();
 #include <sys/types.h>
 #include <stdint.h>
 
+char *calc_verify_expr(struct ui_t *ui);
+
 enum err_t{warning, critical, advice};
 
 struct ui_t {

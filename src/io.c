@@ -8,6 +8,8 @@
 #include "../include/io.h"
 #include "../include/terminal.h"
 
+char *calc_verify_expr(struct ui_t *ui) { }
+
 extern __ssize_t getline (char **__restrict __lineptr,
                           size_t *__restrict __n,
                           FILE *__restrict __stream) __wur __nonnull ((3));

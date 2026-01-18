@@ -91,6 +91,8 @@
             break;                                          \
         }
 
+char verify_available_symbol(const char *expr);
+
 struct calc *parsing_str(const char *expr, uint64_t *len);
 
 struct calc{
